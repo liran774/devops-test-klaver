@@ -15,4 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file app/Dockerfile --tag my-image-name:$(date +%s)
+    - uses: workflow/nix-shell-action@v3
+      with:
+        interpreter: default is bash
+        
+        packages: default is bash
+        
+        script: cd /app 
+        
+        run: docker build . --file app/Dockerfile --tag my-image-name:$(date +%s)
