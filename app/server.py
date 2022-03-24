@@ -6,6 +6,10 @@ app = Flask(__name__)
 port = sys.argv[1];
 
 
+@app.route("/hc")
+def home():
+    return Response("Status: OK", 200)
+
 @app.route("/")
 def home():
     msg = request.args.get('msg')
