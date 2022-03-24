@@ -7,7 +7,7 @@ port = sys.argv[1];
 
 
 @app.route("/hc")
-def home():
+def hc():
     return Response("Status: OK", 200)
 
 @app.route("/")

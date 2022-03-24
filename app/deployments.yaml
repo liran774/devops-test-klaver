@@ -16,6 +16,18 @@ spec:
     spec:
       containers:
       - name: flask
-        image: nati3134/flask-demo
+        image: nati3134/flask-demo:main
         ports:
         - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /hc
+            port: 3000
+          failureThreshold: 1
+          periodSeconds: 10
+        readinessProbe:
+            httpGet:
+              path: /hc
+              port: 3000
+            failureThreshold: 1
+            periodSeconds: 10
