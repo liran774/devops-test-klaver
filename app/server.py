@@ -3,7 +3,7 @@ from flask import request, Response
 import sys
 
 app = Flask(__name__)
-port = sys.argv[1];
+#port = sys.argv[1:]
 
 
 @app.route("/hc")
@@ -16,4 +16,5 @@ def home():
     return Response(msg, 200)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(port))
+    app.run(host='0.0.0.0', port=3000)
+
