@@ -21,9 +21,9 @@ jobs:
     - name: Log in to Docker Hub
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-          image: flaskproject/image-name
+          image: flaskproject
           tags: v1, latest
-          registry: https://hub.docker.com/
+          registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           dockerfile: app/Dockerfile
