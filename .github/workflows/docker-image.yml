@@ -24,7 +24,7 @@ jobs:
       with:
           image: flask
           tags: v1, latest
-          registry: https://hub.docker.com
+          registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
