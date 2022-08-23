@@ -15,7 +15,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+
       
 
     - name: Log in to Docker Hub
@@ -24,10 +24,10 @@ jobs:
           image: flask
           tags: v1, latest
           registry: docker.io
+          dockerfile: app/Dockerfile.ci
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          working-directory: app
-          run: docker build . --file Dockerfile --tag devops-test-klaver:$(date +%s)
+          
 
 
        
