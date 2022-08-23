@@ -24,7 +24,7 @@ jobs:
           image: flask
           tags: v1, latest
           registry: docker.io
-          dockerfile: app/Dockerfile.ci
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           
