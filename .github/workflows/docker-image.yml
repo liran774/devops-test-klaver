@@ -20,7 +20,7 @@ jobs:
       run: docker build . --file Dockerfile --tag devops-test-klaver:$(date +%s)
 
     - name: Log in to Docker Hub
-      uses: docker/build-push-actions@v1
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
